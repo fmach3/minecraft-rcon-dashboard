@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minecraft RCON Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Minecraft RCON Dashboard</h1>
+    <a href="/logout" class="logout">Logout</a>
+
+    <div class="command-buttons">
+      <button onclick="sendCommand('/list')">List Players</button>
+      <button onclick="sendCommand('/say Hello, server!')">Broadcast Message</button>
+      <button onclick="sendCommand('/time set day')">Set Time to Day</button>
+      <button onclick="sendCommand('/weather clear')">Set Weather Clear</button>
+    </div>
+
+    <form onsubmit="event.preventDefault(); sendCommand(document.getElementById('custom-command').value);">
+      <input type="text" id="custom-command" placeholder="Enter custom command" required>
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="response">
+      <h3>Server Response:</h3>
+      <pre><%= response %></pre>
+    </div>
+  </div>
+
+  <script>
+    async function sendCommand(command) {
+      const response = await fetch('/send-command', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `command=${encodeURIComponent(command)}`,
+      });
+      window.location.reload(); // Refresh to show the response
+    }
+  </script>
+</body>
+</html>
