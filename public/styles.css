@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container, .login-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.command-buttons {
+  margin-bottom: 20px;
+}
+
+.command-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.command-buttons button:hover {
+  background: #0056b3;
+}
+
+form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #218838;
+}
+
+.response {
+  background: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.logout {
+  float: right;
+  color: #dc3545;
+  text-decoration: none;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
