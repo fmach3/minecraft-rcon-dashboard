@@ -3,6 +3,16 @@ A RCON dashboard for a home minecraft server
 
 Designed in Node.js, open on port 3000
 
+Run the Application
+
+Install dependencies: npm install 
+
+Start the server: npm start
+
+Then, open http://localhost:3000 in your browser.
+
+
+
 minecraft-rcon-dashboard/
 │
 ├── public/                  # Static files (CSS, JS, images)
